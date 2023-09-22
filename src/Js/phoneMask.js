@@ -3,7 +3,6 @@ var _ = require('lodash');
 
 export const phoneMask = document.addEventListener('DOMContentLoaded', () => {
   const telInput = document.querySelector('[data-tel-input]');
-
   telInput.addEventListener('input', onTelInput);
 
   const handleInvalidInput = _.throttle(function handleInvalidInputThrottled() {

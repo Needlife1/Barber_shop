@@ -14,6 +14,10 @@ function createUser(e) {
     message: e.target.elements.message.value,
   };
 
+  if (user.phone < 13) {
+    Notify.failure('There are not enough numbers in the phone!');
+    return;
+  }
   toAddUser({ name, phone, message: 'Сall me' });
 
   onlineForm.reset();
