@@ -1,0 +1,109 @@
+.online {
+  @include desktop {
+    width: calc(50% + 15px);
+    padding-left: 126px;
+  }
+}
+
+.online-container {
+  @media screen and (max-width: 767.9px) {
+    text-align: center;
+  }
+}
+
+.online-form-wrap {
+  @include tablet {
+    display: flex;
+    gap: 30px;
+  }
+}
+
+.online-titel {
+  font-family: 'Raleway', 'sans-serif';
+  @include font(null, 42px, 49px, 0.05em);
+  color: var(--FFFFFF);
+  margin-bottom: 44px;
+}
+
+.online-form-control {
+  position: relative;
+  margin: 20px 0 40px;
+  width: 100%;
+}
+
+.online-form-control input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px var(--rgba15716418906) solid;
+  width: 100%;
+  @include tablet {
+    width: 330px;
+  }
+  @include desktop {
+    width: 100%;
+  }
+
+  padding: 15px 0;
+  font-size: 18px;
+  color: var(--rgba15716418906);
+
+  &:focus,
+  &:valid {
+    outline: 0;
+    border-bottom-color: var(--FF6C00);
+  }
+
+  &:focus + label span,
+  &:valid + label span {
+    color: var(--FF6C00);
+    transform: translateY(-30px);
+  }
+}
+
+.online-form-control label {
+  position: absolute;
+  top: 15px;
+  left: 0;
+  pointer-events: none;
+}
+
+.online-form-control label span {
+  display: inline-block;
+  font-size: 14px;
+  min-width: 5px;
+  color: var(--rgba15716418906);
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.online-form-control textarea {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 1px var(--rgba15716418906) solid;
+  width: 100%;
+  padding: 15px 0;
+  font-size: 18px;
+  color: var(--rgba15716418906);
+  resize: none;
+
+  &:focus,
+  &:not(:placeholder-shown) {
+    outline: 0;
+    border-bottom-color: var(--FF6C00);
+    background-color: transparent;
+  }
+
+  &:not(:placeholder-shown) + label span,
+  &:focus + label span {
+    color: var(--FF6C00);
+    transform: translateY(-30px);
+  }
+}
+
+.online-btn {
+  color: var(--FFFFFF);
+  transition: background-color 300ms linear;
+  &:hover,
+  &:focus {
+    background-color: var(--FF6C00);
+  }
+}

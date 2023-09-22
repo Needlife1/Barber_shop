@@ -1,0 +1,145 @@
+.open-mob-menu {
+  background-color: inherit;
+  margin-left: auto;
+  border: 0;
+  transition: box-shadow 150ms linear;
+  @include tablet {
+    display: none;
+  }
+
+  &:active {
+    -webkit-box-shadow: 0px 0px 21px -2px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 21px -2px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 21px -2px rgba(0, 0, 0, 0.75);
+  }
+}
+
+.mob-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(0, 0%, 33%, 0.815);
+  transition: opacity 300ms linear, visibility 300ms linear;
+  z-index: 1;
+  @include tablet {
+    display: none;
+  }
+}
+
+.mob-menu-box {
+  background-color: var(--FFFFFF);
+  width: 75vw;
+  height: 100vh;
+  right: 0;
+  padding: 118px 40px 227px;
+  position: absolute;
+  overflow: scroll;
+}
+
+.mob-exit-btn {
+  position: absolute;
+  top: 48px;
+  right: 31px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 1px solid var(--FF6C00);
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  fill: var(--191C26);
+  transition: background-color 300ms linear, fill 300ms linear;
+
+  &:hover,
+  &:focus {
+    background-color: var(--FF6C00);
+    fill: var(--FFFFFF);
+  }
+}
+
+.mob-menu-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.mob-menu-list {
+  margin-bottom: 50px;
+}
+
+.mob-menu-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.mob-menu-link {
+  @include font(600, 18px, 1.38, 0.01em);
+  color: var(--303030);
+  transform: color 200ms linear;
+
+  &:active {
+    color: var(--FF6C00);
+  }
+}
+
+.mob-menu-tel {
+  @include font(600, 18px, 1.38, 0.01em);
+  text-transform: uppercase;
+  color: var(--303030);
+  transition: color 200ms linear;
+
+  &:active {
+    color: var(--FF6C00);
+  }
+}
+
+.mob-menu-online {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  @include font(600, 12px, 1.33, 0.09em);
+  text-transform: uppercase;
+  border: 1px solid var(--FF6C00);
+  border-radius: 25px;
+  background-color: transparent;
+  width: 194px;
+  height: 40px;
+  color: var(--303030);
+  transition: background-color 300ms linear;
+  margin-top: 24px;
+  @include desktop {
+    margin-left: 43px;
+    margin-right: 17px;
+  }
+}
+
+.mob-menu-soc {
+  margin-top: 64px;
+  position: relative;
+  margin-left: 140px;
+}
+
+.mob-menu-soc-item:not(:last-child) {
+  margin-bottom: 24px;
+}
+
+.mob-menu-soc::before {
+  content: '';
+  width: 60px;
+  height: 1px;
+  display: block;
+  background-color: currentColor;
+  position: absolute;
+  transform: translate(-100px);
+  top: 9px;
+}
+
+.mob-menu-soc-link {
+  @include font(600, 14px, 1.35, 0.02em);
+  color: var(--303030);
+}

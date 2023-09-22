@@ -1,0 +1,79 @@
+.contacts {
+  background-image: url(../images/Bg.png);
+  @extend %background;
+
+  @media screen and (max-width: 767.9px) {
+    flex-direction: column;
+  }
+  @media screen and (max-width: 1199.9px) {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+  }
+  @include desktop {
+    width: calc(50% - 15px);
+    padding: 130px 0px 120px 100px;
+  }
+}
+
+.contacts-titel {
+  font-family: 'Raleway', 'sans-serif';
+  @include font(700, 42px, 1.16, 0.05em);
+  color: var(--FFFFFF);
+  margin-bottom: 40px;
+}
+
+.contacts-address {
+  font-style: normal;
+  margin-bottom: 70px;
+}
+
+.contacts-address-link {
+  @include font(700, 18px, 1.67, 0.02em);
+  color: var(--9DA4BD);
+  transition: color 300ms linear;
+
+  &:hover,
+  &:focus {
+    color: var(--FF6C00);
+  }
+}
+
+.contacts-address-tel {
+  @include font(400, 18px, 1.67, 0.02em);
+  color: var(--9DA4BD);
+  transition: color 300ms linear;
+
+  &:hover,
+  &:focus {
+    color: var(--FF6C00);
+  }
+}
+
+.contacts-address-mail {
+  @include font(400, 18px, 1.67, 0.02em);
+  text-decoration-line: underline;
+  color: var(--9DA4BD);
+  transition: color 300ms linear;
+
+  &:hover,
+  &:focus {
+    color: var(--FF6C00);
+  }
+}
+
+.contacts-top-text {
+  @include font(600, 11px, 1.36, null);
+  text-transform: uppercase;
+  color: var(--FFFFFF);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.contacts-bottom-text,
+.contacts-bottom-time {
+  @include font(400, 18px, 1.67, 0.02em);
+  color: var(--9DA4BD);
+}

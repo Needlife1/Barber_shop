@@ -1,0 +1,33 @@
+.gallery-text {
+  @include font(600, 11px, 1.36, null);
+  text-transform: uppercase;
+  color: var(--303030);
+  margin-bottom: 44px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.gallery-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.gallery-item {
+  width: 100%;
+  @include tablet {
+    width: calc((100% - 30px) / 2);
+  }
+
+  @include desktop {
+    width: calc((100% - 90px) / 4);
+  }
+
+  transition: transform 300ms linear, box-shadow 200ms linear;
+
+  &:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 20px 3px rgba(34, 60, 80, 0.6);
+  }
+}

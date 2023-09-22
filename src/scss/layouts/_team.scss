@@ -1,0 +1,99 @@
+.team {
+  background-color: #f7f7f7;
+}
+
+.team-padding {
+  @media screen and (min-width: 768px) and (max-width: 1199.9px) {
+    padding-left: 159px;
+    padding-right: 159px;
+  }
+}
+
+.team-text {
+  @include font(600, 11px, 1.36, null);
+  text-transform: uppercase;
+  color: var(--303030);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.team-titel {
+  @include font(null, 42px, 1.16, 0.05em);
+  color: var(--303030);
+  margin-bottom: 44px;
+}
+
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.team-item {
+  @include desktop {
+    width: calc((100% - 60px) / 3);
+  }
+}
+
+.team-cover-soc {
+  position: relative;
+  overflow: hidden;
+}
+
+.team-soc-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  background-color: hsla(25, 100%, 50%, 0.518);
+  width: 100%;
+  height: 100%;
+  padding: 151px 0;
+  transform: translateY(100%);
+  transition: transform 300ms linear;
+
+  .team-item:hover & {
+    transform: translateY(0);
+  }
+}
+
+.team-soc-link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--FFFFFF);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  fill: var(--191C26);
+  transition: fill 300ms linear, background-color 300ms linear;
+
+  &:hover,
+  &:focus {
+    fill: var(--FF6C00);
+    background-color: var(--191C26);
+  }
+}
+
+.team-item-box {
+  padding-top: 30px;
+}
+
+.team-item-titel {
+  @include font(400, 18px, 1.36, 0.02em);
+  text-align: center;
+  color: var(--303030);
+  margin-bottom: 8px;
+}
+
+.team-item-text {
+  @include font(null, 14px, 1.35, 0.02em);
+  text-align: center;
+  color: var(--FF6C00);
+  margin-bottom: 30px;
+}

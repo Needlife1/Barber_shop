@@ -1,0 +1,26 @@
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+
+  @include mobail {
+    width: 448px;
+  }
+
+  @include tablet {
+    width: 720px;
+  }
+
+  @include desktop {
+    width: 1200px;
+  }
+}
+
+.wrap-container {
+  background-color: var(--191C26);
+  max-width: 1600px;
+  margin: 0 auto;
+  @include desktop {
+    display: flex;
+  }
+}
