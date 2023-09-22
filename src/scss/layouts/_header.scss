@@ -41,11 +41,10 @@
 }
 
 .header-list .header-item {
-  transition: transform 300ms linear, transform 400ms linear;
+  transition: transform 300ms linear;
   &:hover,
   &:focus {
-    transform: scale(1.5);
-    transform: translateY(-10px);
+    transform: scale(1.5) translateY(-10px);
   }
 }
 
