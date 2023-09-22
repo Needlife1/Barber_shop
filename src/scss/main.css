@@ -1313,11 +1313,21 @@ h1 span:nth-child(12) {
   color: var(--rgba15716418906);
   resize: none;
 }
-.online-form-control textarea:focus {
+.online-form-control textarea:not(:-moz-placeholder-shown) {
   outline: 0;
   border-bottom-color: var(--FF6C00);
+  background-color: transparent;
 }
-.online-form-control textarea:focus + label span {
+.online-form-control textarea:focus, .online-form-control textarea:not(:placeholder-shown) {
+  outline: 0;
+  border-bottom-color: var(--FF6C00);
+  background-color: transparent;
+}
+.online-form-control textarea:not(:-moz-placeholder-shown) + label span {
+  color: var(--FF6C00);
+  transform: translateY(-30px);
+}
+.online-form-control textarea:not(:placeholder-shown) + label span, .online-form-control textarea:focus + label span {
   color: var(--FF6C00);
   transform: translateY(-30px);
 }

@@ -85,11 +85,14 @@
   color: var(--rgba15716418906);
   resize: none;
 
-  &:focus {
+  &:focus,
+  &:not(:placeholder-shown) {
     outline: 0;
     border-bottom-color: var(--FF6C00);
+    background-color: transparent;
   }
 
+  &:not(:placeholder-shown) + label span,
   &:focus + label span {
     color: var(--FF6C00);
     transform: translateY(-30px);
