@@ -14,7 +14,7 @@ function createUser(e) {
     message: e.target.elements.message.value,
   };
 
-  if (user.phone.length < 13) {
+  if (user.phone.length !== 13) {
     Notify.failure('There are not enough numbers in the phone!');
     return;
   }
