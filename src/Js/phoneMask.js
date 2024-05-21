@@ -1,8 +1,10 @@
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
-var _ = require('lodash');
+import _ from 'lodash';
 
 export const phoneMask = document.addEventListener('DOMContentLoaded', () => {
   const telInput = document.querySelector('[data-tel-input]');
+  if (!telInput) return;
+
   telInput.addEventListener('input', onTelInput);
 
   const handleInvalidInput = _.throttle(function handleInvalidInputThrottled() {
@@ -11,7 +13,7 @@ export const phoneMask = document.addEventListener('DOMContentLoaded', () => {
 
   function onTelInput(e) {
     const input = e.target;
-    const inputNumbersValue = gatInputNumbersValue(input);
+    const inputNumbersValue = getInputNumbersValue(input);
 
     if (!inputNumbersValue) {
       handleInvalidInput();
@@ -25,7 +27,7 @@ export const phoneMask = document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  function gatInputNumbersValue(input) {
+  function getInputNumbersValue(input) {
     return input.value.replace(/\D/g, '');
   }
 });

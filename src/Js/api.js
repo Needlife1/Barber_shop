@@ -13,7 +13,7 @@ function createUser(e) {
     phone: e.target.elements.phone.value,
     message: e.target.elements.message.value,
   };
-
+  console.log(user);
   if (user.phone.length !== 13) {
     Notify.failure('There are not enough numbers in the phone!');
     return;
@@ -33,7 +33,10 @@ function toAddUser(user) {
   };
 
   axios
-    .post('https://64f0b29f8a8b66ecf77a068e.mockapi.io/api/barbershop', options)
+    .post(
+      'https://664cf736ede9a2b556523d2a.mockapi.io/barber-shope-clients',
+      options
+    )
     .then(user => {
       console.log(user);
       Notify.success('Thank you, we will contact you shortly!');
